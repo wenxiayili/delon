@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SettingsService } from '@delon/theme';
+import { NzMessageService } from 'ng-zorro-antd';
+import { copy } from '@delon/abc';
 
 import { I18NService } from '../../i18n/service';
 import { MetaService } from '../../core/meta.service';
 
 @Component({
     selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: [ './header.component.less' ]
+    templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
     constructor(
         public i18n: I18NService,
         private meta: MetaService,
         private settings: SettingsService,
-        private router: Router
+        private router: Router,
+        private msg: NzMessageService
     ) {}
 
     searching = false;
@@ -71,5 +73,9 @@ export class HeaderComponent implements OnInit {
 
     toggleMenu() {
         this.settings.layout.collapsed = !this.settings.layout.collapsed;
+    }
+
+    onCopy(value: string) {
+        copy(value).then(() => this.msg.success(this.i18n.fanyi('app.demo.copied')));
     }
 }

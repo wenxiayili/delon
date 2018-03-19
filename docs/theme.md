@@ -71,12 +71,12 @@ ng-alain 默认很多字号、尺寸都是以`@font-size-base` 变量为基础�
 | `@aside-bg` | `#fff` | 侧边栏背景色 |
 | `@aside-nav-fs` | `14px` | 侧边栏菜单字号 |
 | `@aside-nav-padding-top-bottom` | `@layout-gutter` | 侧边栏菜单项上下内边距 |
-| `@aside-nav-item-height` | `#fcfcfc` | 侧边栏菜单项高度 |
+| `@aside-nav-item-height` | `38px` | 侧边栏菜单项高度 |
 | `@aside-nav-text-color` | `rgba(0, 0, 0, 0.65)` | 侧边栏菜单文本颜色 |
 | `@aside-nav-text-hover-color` | `#108ee9` | 侧边栏菜单文本悬停颜色 |
 | `@aside-nav-group-text-color` | `rgba(0, 0, 0, 0.43)` | 侧边栏菜单分组文本颜色 |
 | `@aside-nav-selected-text-color` | `#108ee9` | 侧边栏菜单激活时文本颜色 |
-| `@aside-nav-selected-text-color` | `#fcfcfc` | 侧边栏菜单激活时背景颜色 |
+| `@aside-nav-selected-bg` | `#fcfcfc` | 侧边栏菜单激活时背景颜色 |
 | `@aside-collapsed-wd` | `@layout-gutter * 8` | 侧边栏收缩后宽度 |
 | `@aside-collapsed-nav-fs` | `24px` | 侧边栏收缩后文本字号 |
 | `@aside-scrollbar-width` | `0` | 侧边栏滚动条宽度 |
@@ -102,7 +102,3 @@ ng-alain 默认很多字号、尺寸都是以`@font-size-base` 变量为基础�
 | `@search-form-bg` | `#fbfbfb` | 列表页搜索表单背景色 |
 | `@search-form-radius` | `4px` | 列表页搜索表单圆角 |
 | `@preserve-white-spaces-enabled` | `true` | 开启 `preserveWhitespaces` |
-| `@focusing-enabled` | `false` | 开启强制所有 `ng-zorro-antd` 组件字号修订 |
-| `@nz-font-size` | `14px` | `ng-zorro-antd` 组件字号 |
-| `@nz-patch-line-height` | `1.6` | `ng-zorro-antd` 组件行高 |
-| `@focusing-full-color-enabled` | `false` | 开启强制所有 `ng-zorro-antd` 组件主题颜色化 |
