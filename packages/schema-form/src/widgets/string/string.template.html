@@ -1,0 +1,22 @@
+<nz-form-label *ngIf="ui.label" [nzSpan]="ui.span_label" [nzRequired]="ui.required" [nzFor]="idSchema.id">
+    {{ ui.label }}
+    <nz-tooltip *ngIf="ui.showDescription && ui.description" [nzTitle]="ui.description">
+        <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+    </nz-tooltip>
+</nz-form-label>
+<nz-form-control [nzSpan]="ui.span_control" [nzOffset]="ui.offset_control" [ngClass]="{'has-error': error}">
+    <input nz-input
+        [ngModel]="model"
+        (ngModelChange)="change($event)"
+        [attr.id]="idSchema.id"
+        [attr.type]="ui.type || 'text'"
+        [attr.placeholder]="ui.placeholder"
+        [attr.maxLength]="schema.maxLength || null"
+        [attr.minLength]="schema.minLength || null"
+        [disabled]="ui.disabled"
+        [attr.autocomplete]="ui.autocomplete"
+        [attr.autoFocus]="ui.autofocus || null"
+        [nzSize]="ui.size">
+    <nz-form-extra *ngIf="ui.help" [innerHTML]="ui.help"></nz-form-extra>
+    <nz-form-explain *ngIf="error">{{error}}</nz-form-explain>
+</nz-form-control>

@@ -8,6 +8,7 @@ import { AlainThemeModule } from '@delon/theme';
 import { DelonABCModule } from '@delon/abc';
 import { DelonACLModule } from '@delon/acl';
 import { DelonMockModule } from '@delon/mock';
+import { DelonSchemaFormModule } from '@delon/schema-form';
 
 // third libs
 import { CountdownModule } from 'ngx-countdown';
@@ -25,6 +26,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
         DelonABCModule,
         DelonACLModule,
         DelonMockModule,
+        DelonSchemaFormModule,
         // third libs
         CountdownModule
     ],
@@ -38,6 +40,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
         DelonABCModule,
         DelonACLModule,
         DelonMockModule,
+        DelonSchemaFormModule,
         // third libs
         CountdownModule
     ]

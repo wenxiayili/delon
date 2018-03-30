@@ -1,0 +1,28 @@
+<nz-form-label *ngIf="ui.label" [nzSpan]="ui.span_label" [nzRequired]="ui.required" [nzFor]="ui._id">
+    {{ ui.label }}
+    <nz-tooltip *ngIf="ui.showDescription && ui.description" [nzTitle]="ui.description">
+        <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+    </nz-tooltip>
+</nz-form-label>
+<nz-form-control [nzSpan]="ui.span_control" [nzOffset]="ui.offset_control" [ngClass]="{'has-error': error}">
+    <button *ngIf="hasAdd"
+        nz-button nzType="primary"
+        [disabled]="schema.maxItems && model.length >= schema.maxItems"
+        (click)="add($event)" type="button" [innerHTML]="addTitle"></button>
+    <nz-row class="card-list">
+        <nz-col [nzSpan]="array_span" *ngFor="let i of list; let idx=index">
+            <nz-card>
+                <sf-item
+                    [key]="i.key"
+                    [schema]="i.schema"
+                    [model]="i.model"
+                    [idSchema]="i.idSchema"
+                    [ctx]="ctx">
+                </sf-item>
+                <button *ngIf="i.hasRemove" nz-button nzType="danger" type="button" (click)="remove(idx, $event)" [innerHTML]="removeTitle"></button>
+            </nz-card>
+        </nz-col>
+    </nz-row>
+    <nz-form-extra *ngIf="ui.help" [innerHTML]="ui.help"></nz-form-extra>
+    <nz-form-explain *ngIf="error">{{error}}</nz-form-explain>
+</nz-form-control>

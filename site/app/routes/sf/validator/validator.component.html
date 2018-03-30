@@ -1,0 +1,34 @@
+<nz-row [nzGutter]="24">
+    <nz-col [nzSpan]="12">
+        <div style="margin: 16px 0;">
+            <nz-radio-group [(ngModel)]="layout">
+                <label nz-radio-button [nzValue]="'horizontal'">
+                    <span>Horizontal</span>
+                </label>
+                <label nz-radio-button [nzValue]="'vertical'">
+                    <span>Vertical</span>
+                </label>
+                <label nz-radio-button [nzValue]="'inline'">
+                    <span>Inline</span>
+                </label>
+            </nz-radio-group>
+            <button nz-button [nzType]="'primary'" (click)="run()" style="margin-left: 8px;">Run</button>
+        </div>
+        <h1>Schema</h1>
+        <textarea [(ngModel)]="schemaStr" nz-input [nzAutosize]="{minRows: 5}"></textarea>
+        <h1>Model</h1>
+        <textarea [(ngModel)]="modelStr" nz-input [nzAutosize]="{minRows: 5}"></textarea>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+        <h1>Preview</h1>
+        <div style="padding: 8px;">
+            <sf [schema]="schema"
+                [formData]="data"
+                (dataChange)="onChange($event)"
+                (submit)="onSubmit($event)">
+                <button nz-button type="submit">提交</button>
+            </sf>
+            <p style="padding-top: 16px;">Result: {{ result | json }}</p>
+        </div>
+    </nz-col>
+</nz-row>

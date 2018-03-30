@@ -1,0 +1,24 @@
+{
+	"name": "@delon/schema-form",
+    "version": "0.0.0-PLACEHOLDER",
+    "main": "./bundles/schema-form.umd.js",
+    "module": "./esm5/schema-form.js",
+    "es2015": "./esm2015/schema-form.js",
+    "typings": "./schema-form.d.ts",
+	"author": "cipchk<cipchk@qq.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cipchk/delon.git"
+	},
+	"bugs": {
+		"url": "https://github.com/cipchk/delon/issues"
+	},
+	"homepage": "https://github.com/cipchk/delon#readme",
+	"keywords": ["schema form", "angular schema form", "nz-schema-form", "delon", "ng-alain", "alain", "form", "angular form", "ng form", "ngx form", "antd", "ng-zorro-antd"],
+	"peerDependencies": {
+        "ajv": "^6.4.0",
+        "@types/ajv": "^1.0.0",
+        "ng-zorro-antd": "ZORRO-0.0.0-PLACEHOLDER"
+	}
+}

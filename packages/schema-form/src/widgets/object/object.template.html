@@ -1,0 +1,38 @@
+<ng-container *ngIf="grid; else noGrid">
+    <nz-row [nzGutter]="grid.gutter">
+        <ng-container *ngFor="let i of list">
+            <ng-container *ngIf="i.visible">
+                <nz-col
+                    [nzSpan]="i.grid.span" [nzOffset]="i.grid.offset"
+                    [nzXs]="i.grid.xs" [nzSm]="i.grid.sm" [nzMd]="i.grid.md"
+                    [nzLg]="i.grid.lg" [nzXl]="i.grid.xl" [nzXXl]="i.grid.xxl">
+                    <nz-form-item>
+                        <sf-item
+                            [key]="i.key"
+                            [schema]="i.schema"
+                            [model]="i.model"
+                            [idSchema]="i.idSchema"
+                            [ctx]="ctx">
+                        </sf-item>
+                    </nz-form-item>
+                </nz-col>
+            </ng-container>
+        </ng-container>
+    </nz-row>
+</ng-container>
+<ng-template #noGrid>
+    <ng-container *ngFor="let i of list">
+        <ng-container *ngIf="i.visible">
+            <nz-form-item>
+                <sf-item
+                    [fixed-label]="ui.span_label_fixed"
+                    [key]="i.key"
+                    [schema]="i.schema"
+                    [model]="i.model"
+                    [idSchema]="i.idSchema"
+                    [ctx]="ctx">
+                </sf-item>
+            </nz-form-item>
+        </ng-container>
+    </ng-container>
+</ng-template>
